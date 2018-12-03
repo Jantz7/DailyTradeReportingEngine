@@ -22,7 +22,7 @@ public class CalculationServiceImpl implements CalculationService {
         return instructions.stream()
                 .filter(instruction -> instruction.getTransaction().equals(TransactionType.SELL))
                 .map(Instruction::getAmountOfTrade)
-                .reduce(BigDecimal.ZERO, BigDecimal::add).setScale(2, RoundingMode.CEILING);
+                .reduce(BigDecimal.ZERO, BigDecimal::add).setScale(2, RoundingMode.HALF_EVEN);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class CalculationServiceImpl implements CalculationService {
         return instructions.stream()
                 .filter(instruction -> instruction.getTransaction().equals(TransactionType.BUY))
                 .map(Instruction::getAmountOfTrade)
-                .reduce(BigDecimal.ZERO, BigDecimal::add).setScale(2, RoundingMode.CEILING);
+                .reduce(BigDecimal.ZERO, BigDecimal::add).setScale(2, RoundingMode.HALF_EVEN);
     }
 
     @Override

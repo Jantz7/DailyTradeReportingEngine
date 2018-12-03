@@ -53,6 +53,8 @@ public class ReportingServiceImpl implements ReportingService {
                 .append("**********DAILY INCOME**********\n")
                 .append("--------------------------------\n")
                 .append("TRADE AMOUNT: ").append(dailyIncome)
+                .append("\n")
+                .append("--------------------------------\n")
                 .append("\n");
     }
 
@@ -71,6 +73,8 @@ public class ReportingServiceImpl implements ReportingService {
                 .append("**********DAILY OUTCOME**********\n")
                 .append("--------------------------------\n")
                 .append("TRADE AMOUNT: ").append(dailyOutcome)
+                .append("\n")
+                .append("--------------------------------\n")
                 .append("\n");
     }
 
@@ -94,6 +98,8 @@ public class ReportingServiceImpl implements ReportingService {
                         .append("ENTITY: ").append(ranking.getEntity())
                         .append("\n")
                         .append("RANK: ").append(ranking.getRank())
+                        .append("\n")
+                        .append("--------------------------------\n")
                         .append("\n"));
     }
 
@@ -117,6 +123,8 @@ public class ReportingServiceImpl implements ReportingService {
                         .append("ENTITY: ").append(ranking.getEntity())
                         .append("\n")
                         .append("RANK: ").append(ranking.getRank())
+                        .append("\n")
+                        .append("--------------------------------\n")
                         .append("\n"));
     }
 }

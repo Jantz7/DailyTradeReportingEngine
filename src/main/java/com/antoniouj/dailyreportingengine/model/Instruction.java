@@ -1,6 +1,7 @@
 package com.antoniouj.dailyreportingengine.model;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.Currency;
 
@@ -119,6 +120,7 @@ public class Instruction {
     }
 
     private BigDecimal calculateAmountOfTrade() {
-        return this.amountOfTrade = this.pricePerUnit.multiply(BigDecimal.valueOf(this.units)).multiply(this.agreedFx);
+        return this.amountOfTrade = this.pricePerUnit.multiply(BigDecimal.valueOf(this.units)).multiply(this.agreedFx)
+                .setScale(2, RoundingMode.CEILING);
     }
 }
