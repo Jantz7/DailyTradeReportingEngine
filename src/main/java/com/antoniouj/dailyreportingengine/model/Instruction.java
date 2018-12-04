@@ -1,5 +1,6 @@
 package com.antoniouj.dailyreportingengine.model;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
@@ -11,27 +12,34 @@ import java.util.Currency;
 public class Instruction {
 
     // A financial entity whose sales are to be bought or sold
+    @NotNull(message = "Entity cannot be null")
     private String entity;
 
     // The transactionType of the Instruction which can be "BUY" or "SELL"
+    @NotNull(message = "TransactionType cannot be null and must have a value of B or S")
     private TransactionType transaction;
 
     // The Foreign exchange rate with respect to USD that was agreed
+    @NotNull(message = "AgreedFx cannot be null")
     private BigDecimal agreedFx;
 
     // The Currency of the transaction
+    @NotNull(message = "Currency cannot be null and must be a valid currency")
     private Currency currency;
 
     // Date of which the Instruction was sent by the client
     private LocalDate instructionDate;
 
     // Date of which the client wishes the Instruction to be settled
+    @NotNull(message = "Settlement Date cannot be null")
     private LocalDate settlementDate;
 
     // Number of shares to be bought or sold
+    @NotNull(message = "Units cannot be null")
     private int units;
 
     // Price of a single share
+    @NotNull(message = "Price per units cannot be null")
     private BigDecimal pricePerUnit;
 
     // Amount of trade which is calculated by units * pricePerUnit * agreedFx
